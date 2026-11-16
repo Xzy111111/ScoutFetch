@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>scoutfetch_sim</name>
+  <version>0.1.0</version>
+  <description>Gazebo simulation backend for MC ARM</description>
+  <maintainer email="maintainer@example.com">MC ARM</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>scoutfetch_interfaces</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+  <exec_depend>scoutfetch_description</exec_depend>
+  <exec_depend>mecanum_drive_controller</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>topic_tools</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

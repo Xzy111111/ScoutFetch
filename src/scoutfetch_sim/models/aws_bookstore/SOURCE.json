@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/aws-robotics/aws-robomaker-bookstore-world",
+  "branch": "ros1",
+  "commit": "ed542eb41809d5c5f1c67f32d4ba24e0e90886b3",
+  "local_changes": [
+    "Two Spotlight mesh case aliases for Linux filesystems"
+  ],
+  "license": "LICENSE"
+}

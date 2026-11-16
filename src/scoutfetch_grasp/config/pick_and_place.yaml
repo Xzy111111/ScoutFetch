@@ -1,0 +1,102 @@
+# pick_node 参数
+# 所有 Pose 均位于 planning_frame (base_link)。
+# 第一版为 dry-run 示例坐标, 不可直接用于真机执行。
+
+pick_node:
+  ros__parameters:
+    planning_group: "arm"
+    eef_link: "gripper_tcp"
+    planning_frame: "base_link"
+    # The base origin is 0.149 m above the floor. A floor TCP at -0.03 m
+    # pinches this upright bottle's body at 0.119 m, below the narrow neck.
+    # Must match the station planner's calibration.
+    grasp_min_z: -0.030
+    floor_pick_enabled: true
+    floor_threshold_z: 0.05
+    floor_lift_distance: 0.25
+    floor_grasp_z: -0.030
+    named_ready: "ready"
+
+    # 搬运收臂目标 (return_to_stow:=true 时生效)。相对于 lift 姿态按 10% 折叠,
+    # 实测夹着瓶子折到此姿态瓶子仍被夹住且不碰车体 (瓶底 z≈0.357 m)。
+    carry_stow_joints: [0.0021, 0.1912, -0.2166, -0.0031, 0.0690, 0.0031]
+
+    # false: 仅规划/Marker, 不驱动真机、不发送夹爪命令
+    execute: false
+
+    # 第二道安全门: 仅 execute=true 且 allow_real_execution=true 才允许真实执行。
+    # 默认必须保持 false; 真机授权只能在启动时显式打开, 不在任何正式配置里默认 true。
+    allow_real_execution: false
+
+    # 常驻输入: 订阅 /grasp_target_pose (A2 target_pose_resolver 输出, base_link 系)。
+    # 只缓存最新合法目标 (frame 须为 base_link), 不自动规划; 由 /execute_pick 显式触发。
+    target_topic: "/grasp_target_pose"
+    # 显式触发入口: /execute_pick (std_srvs/srv/Trigger)
+    execute_service: "/execute_pick"
+
+    object_pose:
+      x: 0.30
+      y: 0.0
+      z: 0.30
+
+    object_size:
+      x: 0.05
+      y: 0.05
+      z: 0.05
+
+    # 深度相机只能看到物体"近表面", 而平行两指夹爪要夹住圆柱/瓶身, TCP 必须
+    # 落在物体"中心轴"上, 而不是前表面 —— 否则两指在圆柱前缘相切闭合, 会滑脱。
+    # 矿泉水瓶瓶身半径 0.032 m, 相机沿 base_link +x 近似正对瓶身, 故沿 +x 补一个
+    # 半径, 把抓取点从近表面推到中心轴; z 的 0.003 是实测的表面点比瓶身几何中心
+    # 略低一点的高度补偿。该偏移是"按物体几何做的抓取补偿", 换物体/换夹爪需重标,
+    # 与真机同源 (真机深度相机同样只看近表面, 需要同样的半径补偿)。
+    grasp_offset:
+      x: 0.032
+      y: 0.0
+      z: 0.003
+
+    # 注意: 纯 TCP 向下 (pitch 180deg, y=1.0) 对本机械臂不可达。
+    # 该臂最大可及下俯角约 110-116 度。此处使用 pitch 110deg 近似顶抓。
+    # Equivalent RPY = (0, ~110 deg, 0)。TCP local +Z -> base_link (0.940, 0, -0.342) (朝前下方)
+    # TCP local +Y -> base_link +Y (两指开合方向正确)
+    grasp_orientation:
+      x: 0.0
+      y: 0.819
+      z: 0.0
+      w: 0.574
+
+    # approach_axis 对齐到 grasp_orientation 下 TCP local +Z 的实际方向 (Ry(110deg)*UnitZ)
+    # = (sin110, 0, cos110) = (0.9397, 0, -0.3420)。两概念在代码中仍独立, 由 YAML 保证一致。
+    approach_axis: [0.9397, 0.0, -0.3420]
+    approach_distance: 0.10
+
+    # 提起方向 = 撤回方向 (-approach_axis, 上后方向)。
+    # 之前用 [0,0,1](base 竖直向上) 在部分抓取姿态下 Cartesian fraction<0.99 不可达,
+    # 沿撤回方向(=approach 反向)有更大余量, 也是抓取后更自然的提物动作。
+    lift_axis: [-0.9397, 0.0, 0.3420]
+    # 视觉抓取: 0.05m 撤回提起
+    lift_distance: 0.05
+
+    cartesian_step: 0.01
+    min_cartesian_fraction: 0.99
+
+    velocity_scaling: 0.10
+    acceleration_scaling: 0.10
+
+    # 夹爪: 仅 execute:=true 时才会发送 /control/gripper_cmd
+    gripper:
+      # 张开到 0.09 (而非 0.08): 瓶身直径 0.064, 每侧留 0.013 余量, 接近时
+      # 张开的两指不容易先蹭到瓶身把瓶子推走; 闭合时仍能收拢到 ~0.064 夹住。
+      open_width: 0.09
+      close_width: 0.0
+      force: 1.0
+      command_timeout: 5.0
+      width_tolerance: 0.005
+      # 夹住物体即视为闭合成功: 物体厚度使 width 无法合到 0,
+      # width <= 该阈值即判定已夹住。
+      # 矿泉水瓶瓶身直径 0.064 m (> 0.05), 阈值须高于瓶径又有别于张开位。
+      grasp_width_threshold: 0.070
+      # 空抓/滑脱下限: 两指完全合拢 (~0) 说明指间没有物体; 同时 width 明显
+      # 小于瓶径 (0.064) 说明物体在闭合中被推到指外, 也不算夹住。
+      # 取 0.060: 允许 4 mm 压缩, 但拒绝实测 0.056 的滑脱。
+      grasp_width_min: 0.060

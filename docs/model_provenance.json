@@ -1,0 +1,207 @@
+{
+  "local_upstream": "MC_ARM_RECORG_TRANS/src/driver/piper_driver/agx_arm_ws/src/agx_arm_ros",
+  "license_copy": "LICENSES/Piper-Local-Upstream-MIT.txt",
+  "note": "Local source evidence only; no claim that an unrelated online repository has identical assets.",
+  "files": [
+    {
+      "path": "src/scoutfetch_description/meshes/piper/base_link.stl",
+      "sha256": "fd4a3d6d0266205fe3f725f048645be66592c23564db22e08b0807d5569b2c64",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/base_link.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/base_link.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/base_link.dae",
+      "sha256": "99cd5083e485e3eb739d967c57451f11e32e80b9f4f293815ba3b546d99bdc3c",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/base_link.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/base_link.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/flange.dae",
+      "sha256": "421c3e20c6109df3c96c5ce18ff0b2609b6604135ff790e4bfc1d9a281b0701a",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/flange.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/dae/flange.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/flange.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/dae/flange.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/flange.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/gripper_base.dae",
+      "sha256": "aaea10ec06709d6a3343dd3378553eee3df40b43ee276df10c5b68ac7f61bae2",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/gripper_base.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/dae/gripper_base.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/gripper_base.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/dae/gripper_base.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/gripper_base.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/gripper_link1.dae",
+      "sha256": "b4aaf0e024d09eb0454e70e0c5092638edcf7da7c253d1effdeeaec46f76427b",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/gripper_link1.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/dae/gripper_link1.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/gripper_link1.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/dae/gripper_link1.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/gripper_link1.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/gripper_link2.dae",
+      "sha256": "0da1350898b2787b76b84698253aeb1efd2ddb6360b2fa2ae03ecff389883af8",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/gripper_link2.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/dae/gripper_link2.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/gripper_link2.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/dae/gripper_link2.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/dae/gripper_link2.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link1.dae",
+      "sha256": "ea11f3382f6b32ec6d2283db4320ba2065ee1d24358f9b236ce71cfd4cd352cd",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link1.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link1.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link2.dae",
+      "sha256": "f6a723ff09c605a4bab19c1581b8879461967afe5626a3b7ca0a884e5f11a869",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link2.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link2.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link3.dae",
+      "sha256": "17cee6f92b741f21e29e4a3a3f600ba8093af3e1f61ae717747e03251a76982c",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link3.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link3.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link4.dae",
+      "sha256": "2a4d28b04341c22fdc38e9fc576c2386bf6f1e8ef0526d5b2cf179ea9ea650b3",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link4.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link4.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link5.dae",
+      "sha256": "fc7253ad4128731fded02700d5f35b94a30f3c219cd2b75b62b0abbd81bf7bff",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link5.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link5.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/dae/link6.dae",
+      "sha256": "92f67e27b573969b4a1806ff3bc427bf9219c8ff78fec80d91ce3f32d69b1b9d",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/dae/link6.dae",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/dae/link6.dae"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/flange.stl",
+      "sha256": "f9ce752f93a6598858a779e3d8755a09e466b588efcffc3a1c3953773753a22b",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/flange.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/flange.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/flange.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/flange.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/flange.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/gripper_base.stl",
+      "sha256": "0b839dc0bcb7d94e3422c74f6396b54a0441ba4836448ab5586e7f372d1bdbf3",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/gripper_base.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/gripper_base.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/gripper_base.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/gripper_base.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/gripper_base.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/gripper_link1.stl",
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/gripper_link1.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/gripper_link1.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/gripper_link1.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/gripper_link1.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/gripper_link1.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/gripper_link2.stl",
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/gripper_link2.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_h/meshes/gripper_link2.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/gripper_link2.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_l/meshes/gripper_link2.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_x/meshes/gripper_link2.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link1.stl",
+      "sha256": "9ee6e1d67c0241f42a0dbaf5c676d19230375ed078ee1943bb8c4c37ab303d14",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link1.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link1.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link2.stl",
+      "sha256": "0d37675b699b643f2e15348de99aed535fac10dc5f09a79b8e4b0acfaf4e0378",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link2.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link2.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link3.stl",
+      "sha256": "e8ae51f17c0c7f6d67b753922e2cc269f5e8372a65734f859231639a64fe8fad",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link3.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link3.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link4.stl",
+      "sha256": "efa33022976218f246f736a6133494b5d0e5486e8b50b52900c42f285ae85558",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link4.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link4.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link5.stl",
+      "sha256": "a1c69d1c7f6f8c60e2c82331c0f444725200ed4053d3e5ec23aa82cb5db5b29f",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link5.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link5.stl"
+      ]
+    },
+    {
+      "path": "src/scoutfetch_description/meshes/piper/link6.stl",
+      "sha256": "88374973bc3bd9e7389b5853cd6e555af9731c30b658b1ee6f85be34a126cb92",
+      "matching_local_upstream_paths": [
+        "src/agx_arm_description/agx_arm_urdf/piper/meshes/link6.stl",
+        "src/agx_arm_description/agx_arm_urdf/piper_bak_20260712_183337/meshes/link6.stl"
+      ]
+    }
+  ]
+}

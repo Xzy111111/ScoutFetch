@@ -1,0 +1,32 @@
+# yolo_detector 节点参数
+#
+# 只在 localization_node 用 pixel_source:=yolo 时才需要本节点。
+# model_path / classes_path 由 yolo_detector.launch.py 用本包 share/models 的安装副本填入;
+# 真机换模型时用 launch 参数覆盖, 不必改本文件。
+
+yolo_detector:
+  ros__parameters:
+    # ---- 模型 ----
+    # 空 = 用 launch 传入的包内默认模型 (share/scoutfetch_vision/models/yolov8n.onnx)
+    model_path: ""
+    classes_path: ""
+
+    # 只发布这些类别 (类别名来自 classes_path)。COCO 预训练模型里矿泉水瓶 = "bottle"。
+    # 换自定义模型时改成自己的类别名; 留空 = 发布全部检测。
+    target_classes: ["bottle"]
+
+    # 置信度阈值。COCO 模型对仿真里这个矿泉水瓶的分数实测在 0.25~0.34 之间,
+    # 贴着 0.25 会被偶发帧丢掉, 所以放到 0.20 留出余量 (误检风险低: 每帧只有 1 个目标框)。
+    confidence_threshold: 0.20
+    iou_threshold: 0.45
+    # 模型输入边长; 0 表示用 ONNX 里声明的值 (YOLOv8 导出为 640)
+    input_size: 640
+
+    # ---- 输入/输出 ----
+    # 与 localization_node 的 color_topic 必须一致 (检测框坐标是图像像素)
+    image_topic: /camera/camera/color/image_raw
+    # localization_node 的 detection_topic 必须指向同一个话题
+    detections_topic: /detections
+
+    # 推理上限频率 (CPU 上 YOLOv8n 约每帧几十毫秒, 不必跟满相机帧率)
+    inference_rate: 10.0

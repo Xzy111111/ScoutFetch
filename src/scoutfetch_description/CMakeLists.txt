@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.8)
+project(scoutfetch_description)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY config launch meshes rviz urdf DESTINATION share/${PROJECT_NAME})
+install(FILES README.md DESTINATION share/${PROJECT_NAME})
+if(BUILD_TESTING)
+  find_package(ament_cmake_pytest REQUIRED)
+  ament_add_pytest_test(model_contract test/test_model_contract.py
+    APPEND_ENV PYTHONPATH=${CMAKE_CURRENT_SOURCE_DIR}/test)
+endif()
+ament_package()

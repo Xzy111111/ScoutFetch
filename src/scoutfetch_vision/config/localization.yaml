@@ -1,0 +1,55 @@
+# localization_node 参数
+
+localization_node:
+  ros__parameters:
+    # 像素来源:
+    #   "yaml"  = 用下方固定像素。只对标定时的那个机器人位姿有效 —— 底盘一旦移动,
+    #             该像素就不再指向物体 (会读到远墙等背景), 不适合导航后的任务。
+    #   "click" = OpenCV 窗口鼠标左键点击选点 (需要显示器/人工介入)
+    #   "yolo"  = 用视觉检测节点的 /detections 里置信度最高的检测框中心; 与机器人位姿无关,
+    #             无有效检测时本节点不发布目标。
+    # 导航后的自动任务用 "yolo" (配合 yolo_detector 节点)。
+    pixel_source: "yaml"
+
+    # 人工指定目标像素 (仅 yaml 模式使用)
+    pixel_u: 319
+    pixel_v: 282
+
+    # ---- yolo 模式 ----
+    # 检测来源: /detections = vision_msgs/Detection2DArray (由 yolo_detector 发布)。
+    # 类别筛选在检测节点侧完成, 本节点只取置信度最高的那一条。
+    detection_topic: /detections
+    # 超过该时长未刷新的检测视为失效 (目标已离开视野), 本节点停止发布目标。
+    # 取 1.0s: 仿真里相机/深度流偶尔会有 ~0.7s 的停顿 (CPU 争用), 阈值太紧会把
+    # 仍然有效的检测丢掉, 造成目标时有时无。
+    detection_timeout: 1.0
+    max_detection_depth_delta: 0.12
+
+    # 抓取点位置: 在检测框中心下方 grasp_offset_ratio * 框高 处。
+    # 矿泉水瓶的检测框含瓶颈/瓶盖, 框中心落在肩部, 而夹爪要夹的是瓶身, 所以往下偏。
+    # 换物体或换夹爪时按需要调整 (0 = 直接用框中心)。
+    grasp_offset_ratio: 0.15
+
+    # 实际运行确认的 topic (camera_name:=camera camera_namespace:=camera, align_depth:=true)
+    # aligned depth 对齐到 color, 像素与 color 图一致
+    depth_topic: /camera/camera/aligned_depth_to_color/image_raw
+    depth_info_topic: /camera/camera/aligned_depth_to_color/camera_info
+
+    # 帧: aligned depth 在 color 光学系下, 深度按该系解算
+    optical_frame: camera_color_optical_frame
+    target_frame: base_link
+
+    # 深度有效性范围 (米)
+    min_depth: 0.10
+    max_depth: 5.0
+
+    # 第一版固定目标姿态 = scoutfetch_grasp 已验证的抓取姿态 Ry(110°)
+    # (visualization 只用 position; orientation 由 scoutfetch_grasp 自身 config 决定)
+    orient_w: 0.573932
+    orient_x: 0.0
+    orient_y: 0.818903
+    orient_z: 0.0
+
+    publish_rate: 10.0
+    marker_scale: 0.03
+    marker_frame: base_link

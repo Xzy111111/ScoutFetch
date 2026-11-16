@@ -1,0 +1,26 @@
+ScoutFetch
+Copyright 2026 ScoutFetch contributors.
+
+The root Apache License 2.0 covers original ScoutFetch contributions for which
+the contributors have licensing authority, except files with separate terms.
+It does not relicense third-party material or supersede package/file notices.
+
+On 2026-11-16 the maintainer confirmed that scoutfetch_vision,
+scoutfetch_reach and scoutfetch_grasp are original work and authorized their
+Apache-2.0 declarations, replacing the former ambiguous BSD metadata.
+
+Robot model provenance reported by the maintainer: a modified RoboMaster
+sentry chassis combined with an AgileX robotic arm. Upstream model/mesh rights
+are retained separately from original ScoutFetch code and modifications.
+See THIRD_PARTY_NOTICES.md for model origins and outstanding source details.
+
+Vendored bookstore assets retain Amazon's accompanying license.
+Piper visual/collision mesh files retain the local upstream MIT notice:
+Copyright (c) 2026 aalicecc. Exact mesh matches are recorded in
+docs/model_provenance.json.
+
+Ultralytics YOLO models retain their upstream terms. The root Apache license
+does not grant Apache rights to the models or settle obligations for a work
+combined with them. See LICENSES/AGPL-3.0.txt and the model metadata.
+
+This file records attributions and scope; it does not replace license texts.

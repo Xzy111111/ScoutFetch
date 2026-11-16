@@ -1,0 +1,9 @@
+{
+  "model": "Ultralytics YOLOv8n COCO detector",
+  "onnx_sha256": "0a67d62a5ae4d247f05cb4c1cd36d73b53d6919b170e1dadd5cdcd07b9f904ab",
+  "upstream_project": "https://github.com/ultralytics/ultralytics",
+  "upstream_license_expression": "AGPL-3.0 (or separately obtained Ultralytics Enterprise terms)",
+  "license_text": "LICENSE-AGPL-3.0.txt",
+  "historical_documented_export": "YOLO('yolov8n.pt').export(format='onnx', opset=12, imgsz=640)",
+  "provenance_limit": "Original checkpoint digest and exact export environment were not recorded; no replacement provenance is invented."
+}

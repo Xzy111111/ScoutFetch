@@ -1,0 +1,36 @@
+model:
+  source_revision: "MC_ARM_RECORG_TRANS working tree 2026-08-21"
+  conventions: "Exact frame and joint naming from real car_with_piper model"
+  chassis:
+    wheel_radius: 0.076       # CALIBRATE: effective rolling radius
+    front_x: 0.15264
+    rear_x: -0.16764
+    left_y: 0.16974
+    right_y: -0.16973
+  root_link: base_link
+  arm_root_link: base_link
+  wheel_joints: [F_F_L, F_F_R, F_B_L, F_B_R]
+  simulation_contacts:
+    measured_date: "2026-11-06"
+    source: "CAD radial envelope and wheel COM; Gazebo in-place/forward/strafe acceptance"
+    wheel_radius: 0.07687545
+    center_projection_sum_xy: 0.29110
+    contact_model: "sphere with diagonal friction fixed in base_link; free roller direction"
+    rear_right_joint_axis_in_local_frame: [0, -1, 0]
+    scope: "sim_mode only; hardware CAD frame and calibration initial values above are unchanged"
+  chassis_mount_base_link_to_body_xyz: [0.0, 0.0, 0.004]
+  lidar_mount_xyz: [0.1325, 0.0, 0.010499]
+  lidar_mount_rpy: [0.0, 0.0, 3.141592653589793]
+  camera_mount_link6_to_camera_link:
+    xyz: [-0.055, 0.0, 0.040]
+    rpy: [0.0, -1.57079632679, 0.0]
+    mode: "convenient_sim_pose"
+    status: "active in scoutfetch.urdf.xacro"
+  calibrated_handeye_link6_to_camera_optical:
+    xyz: [-0.026267, 0.109692, 0.005331]
+    rpy: [-0.385276, 0.032820, -2.513681]
+    method: "Tsai-Lenz, 171 samples, 2026-07-30"
+    status: "reference only; not active in scoutfetch.urdf.xacro"
+  lidar_to_imu:
+    xyz: [-0.011, -0.02329, 0.04412]
+    rpy: [0.0, 0.0, 0.0]

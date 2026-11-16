@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>scoutfetch_navigation</name>
+  <version>0.1.0</version>
+  <description>SLAM Toolbox and Nav2 configuration for the MC ARM mobile manipulator</description>
+  <maintainer email="maintainer@example.com">MC ARM</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>nav2_amcl</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>nav2_mppi_controller</exec_depend>
+  <exec_depend>nav2_collision_monitor</exec_depend>
+  <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>twist_mux</exec_depend>
+  <test_depend>ament_cmake_pytest</test_depend>
+  <test_depend>python3-yaml</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

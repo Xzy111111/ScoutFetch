@@ -1,0 +1,100 @@
+# scoutfetch_reach 参数 (V2: A8-R2 Nav 误差鲁棒抓取站位筛选)
+# 全部 pose 计算基于 map 系 /target_pose_map 与 base_link 系机械臂抓取。
+
+scoutfetch_reach_node:
+  ros__parameters:
+    # ---- 候选生成 (V2: 以 target->robot 方向为参考, 在机器人侧搜索底盘站位) ----
+    # radius_min/max/step: 运行时生成 0.30..0.75 (m) 候选半径。
+    #   A8-R2: 上限恢复 0.75 为"搜索空间", 但 0.75 不一定允许输出 —— 最终有效性
+    #   由下方 Nav 误差鲁棒检查 (enable_robust_reachability_check) 决定。
+    #   R1 的 xy_goal_tolerance=0.05 保持不回退, 不再用 radius_max 硬编码代替抓取安全裕量。
+    # angle_offsets_deg: 相对 target->robot 方向 (theta_ref) 的偏移角 (deg)。
+    #   候选 yaw 始终朝向目标; 正偏移绕目标逆时针, 负偏移顺时针。
+    radius_min: 0.30
+    radius_max: 0.75
+    radius_step: 0.05
+    angle_offsets_deg: [-60.0, -45.0, -30.0, 0.0, 30.0, 45.0, 60.0]
+
+    # ---- 舒适距离评分 ----
+    # preferred_distance 保持 R1 的 0.475 (优选 0.45..0.50): 在通过鲁棒过滤的候选里,
+    # 仍优先选较近且机械臂更有裕量的站位; 0.50 因桌边碰撞被淘汰时自动退到 0.55/0.60/...
+    # 而非直接失败。max_distance 仅做与恢复后搜索范围的最小一致性同步 (0.70->0.75)。
+    preferred_distance: 0.475
+    min_distance: 0.25
+    max_distance: 0.75
+
+    # ---- A8-R2: Nav2 终端误差鲁棒检查 ----
+    # 对应 bringup default.yaml 实际生效的 general_goal_checker:
+    #   xy_goal_tolerance=0.05, yaw_goal_tolerance=0.10 (R1 已收紧, 不回退)。
+    # 对通过 nominal footprint/IK/approach/lift/joint_margin 的候选:
+    #   1) 碰撞鲁棒: 以 nav_xy_error_margin 为半径, 8 方向 x 3 yaw (nominal/±margin)
+    #      共 24 个终端 pose 采样, 全部 footprint 可通行才保留 (否则 NAV_ERROR_COLLISION)。
+    #   2) 操控鲁棒: 构造误差最坏情形 —— Case B (base 沿 away-from-target 偏移
+    #      nav_xy_error_margin, target 更远 5cm) + Case C/D (该位置 yaw ±nav_yaw_error_margin),
+    #      逐个复用现有 IK/reverse approach/lift 整链, 全过才保留 (否则 NAV_ERROR_UNREACHABLE)。
+    #   enable_robust_reachability_check=false 时退化为 R1 行为 (仅 nominal 检查)。
+    nav_xy_error_margin: 0.05
+    nav_yaw_error_margin: 0.10
+    enable_robust_reachability_check: true
+
+    # ---- Nav2 可通行判定 (A8-R3B corrected 语义) ----
+    # footprint_x/y 为真实底盘半长/半宽 (base_link 系), 与 bringup footprint 一致。
+    # base_safety_margin 在此基础上外扩, 用于适当增大安全边距。
+    # 碰撞语义对齐 Nav2 Smac GridCollisionChecker:
+    #   center>=99 (raw 253 inscribed/254 lethal) 判碰撞; footprint 仅 ==100 (raw 254 lethal)
+    #   判硬碰撞, 1~99 不 reject; unknown 一律 fail-closed。无独立 lethal 阈值参数。
+    costmap_topic: "global_costmap/costmap"
+    footprint_x: 0.275
+    footprint_y: 0.20
+    base_safety_margin: 0.05
+
+    # ---- 机械臂抓取 (与 pick_and_place.yaml 一致) ----
+    planning_group: "arm"
+    eef_link: "gripper_tcp"
+    planning_frame: "base_link"
+    # Match scoutfetch_grasp's TCP calibration in every nominal/robust IK check.
+    grasp_offset: {x: 0.032, y: 0.0, z: 0.003}
+    grasp_min_z: -0.030
+    floor_pick_enabled: true
+    floor_threshold_z: 0.05
+    floor_lift_distance: 0.25
+    floor_grasp_z: -0.030
+    floor_min_distance: 0.525
+    floor_max_distance: 0.60
+    floor_radius_step: 0.025
+
+    grasp_orientation:
+      x: 0.0
+      y: 0.819
+      z: 0.0
+      w: 0.574
+
+    approach_axis: [0.9397, 0.0, -0.3420]
+    approach_distance: 0.10
+    lift_axis: [-0.9397, 0.0, 0.3420]
+    lift_distance: 0.05
+
+    cartesian_step: 0.01
+    min_cartesian_fraction: 0.99
+    # V1 候选可行性: 连续可达路径不做碰撞检测 (规避 move_group FCL 0.7.0
+    # 自碰撞段错误; 真实抓取轨迹由导航到位后的 scoutfetch_grasp 最终验证)。
+    # 仅限本包, 不影响 scoutfetch_grasp 原有 collision-aware planning。
+    cartesian_avoid_collisions: false
+
+    # ---- 关节限位安全余量 (rad) ----
+    # IK 解(q_grasp/pre_grasp/lift)任一关节距其限位小于该值即淘汰该候选。
+    # 不实现 Jacobian manipulability。
+    joint_margin: 0.05
+
+    # ---- 评分权重 ----
+    # total_score = distance_weight * distance_score + joint_weight * joint_score
+    # distance_score: 目标在 base_link 系水平距离相对舒适区间 [min,max] 的居中度。
+    # joint_score:    q_grasp 各关节按上下限归一化, 关节中心=1, 越靠近限位越低。
+    distance_weight: 0.6
+    joint_weight: 0.4
+
+    # ---- 并列决策 ----
+    # best 选择: 先最大化 total_score; 当 |total_a - total_b| <= score_tie_epsilon
+    # 视为并列, 取距当前机器人 (map->base_link) nav_distance 更小的候选。
+    # nav_distance 不参与主加权评分。
+    score_tie_epsilon: 0.02

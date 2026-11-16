@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>scoutfetch_vision</name>
+  <version>0.1.0</version>
+  <description>
+    目标三维定位: 目标像素 (人工/yolo 检测框) + aligned depth → camera XYZ → TF → base_link
+    → /target_pose, /target_pose_map。只输出 position (固定抓取姿态), 不做姿态估计 / 点云分割。
+    检测由独立的 yolo_detector 节点负责, 本包只消费 vision_msgs/Detection2DArray。
+  </description>
+  <maintainer email="ros@todo.todo">ros</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>vision_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <!-- yolo 模式的检测来源 (scripts/yolo_detector.py); 仅在 pixel_source:=yolo 时需要。
+       onnxruntime 无 rosdep key, 由 pip 安装, 见 README。 -->
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+
+  <test_depend>ament_cmake_pytest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

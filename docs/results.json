@@ -1,0 +1,1614 @@
+{
+  "scope": "Recorded Gazebo results, not live CI or hardware validation. Historical raw record paths in the records refer to original runs.",
+  "records": {
+    "far_search_2026-11-06.json": {
+      "date": "2026-11-06",
+      "scope": "Four farther supported-bottle trials plus one empty-scene/delayed-target physical trial",
+      "configuration": {
+        "search_max_turns": 0,
+        "search_timeout_sec": 0.0,
+        "detector": "YOLOv8s",
+        "confidence_threshold": 0.2
+      },
+      "tests": {
+        "total": 101,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "runs": [
+        {
+          "seed": 1,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "scenario": "far16_seed1",
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": -1.062885,
+              "y": -1.195941,
+              "z": 0.45999942523705406,
+              "yaw": -2.2973570000000003,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.428465863858357e-09,
+              "y": 8.111741347792725e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.4588334160400686e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.2034526317672457,
+              "y": -0.003157221500223255,
+              "z": 0.3528467665638618,
+              "yaw": -0.16611849881705482,
+              "tilt": 0.022848951635132432
+            },
+            "mc_arm": {
+              "x": -0.005082800846882558,
+              "y": 0.01634547633769006,
+              "z": 0.1488474400426704,
+              "yaw": -0.10260553807716119,
+              "tilt": 1.4901161193847656e-08
+            }
+          },
+          "gripper_width": 0.0644578255274707,
+          "return_position_error_m": 0.01711751870474587,
+          "return_yaw_error_rad": 0.10260553807717579,
+          "search_translation_drift_m": 0.014990748980845318,
+          "retention_observed_after_done_sec": 8.017320394515991,
+          "post_return_bottle_height_range_m": [
+            0.3528467665638618,
+            0.3528590322756522
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation.",
+          "initial_bottle_distance_m": 1.599999811147286,
+          "bottle_first_observed_after_arm_sec": -2.5058822631835938,
+          "bottle_initially_absent": false,
+          "navigation_before_bottle_appeared": false,
+          "distance_m": 1.6
+        },
+        {
+          "seed": 7,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "scenario": "far19_seed7",
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": 0.850143,
+              "y": -1.699193,
+              "z": 0.45999942523705406,
+              "yaw": -1.106891,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.4284658640516397e-09,
+              "y": 8.111727951434333e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.4588349602448288e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.19347207615558165,
+              "y": 0.005142947043924135,
+              "z": 0.3527308665196288,
+              "yaw": -0.17246911987410113,
+              "tilt": 0.028633239990557408
+            },
+            "mc_arm": {
+              "x": -0.013909398723511783,
+              "y": 0.025803405336910046,
+              "z": 0.14884744004223524,
+              "yaw": -0.10940644674044388,
+              "tilt": 1.4901161193847656e-08
+            }
+          },
+          "gripper_width": 0.06451529733245825,
+          "return_position_error_m": 0.02931359855170372,
+          "return_yaw_error_rad": 0.10940644674045846,
+          "search_translation_drift_m": 0.014993517579624024,
+          "retention_observed_after_done_sec": 8.018793821334839,
+          "post_return_bottle_height_range_m": [
+            0.3527308665196288,
+            0.35273371049787733
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation.",
+          "initial_bottle_distance_m": 1.8999999931919886,
+          "bottle_first_observed_after_arm_sec": -2.5083162784576416,
+          "bottle_initially_absent": false,
+          "navigation_before_bottle_appeared": false,
+          "distance_m": 1.9
+        },
+        {
+          "seed": 42,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "scenario": "far22_seed42",
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": 1.408429,
+              "y": 1.690068,
+              "z": 0.45999942523705406,
+              "yaw": 0.876044,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.4284658640775909e-09,
+              "y": 8.111736530450295e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.458834867921866e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.20568429995582807,
+              "y": 0.04377755822507366,
+              "z": 0.3524907522060497,
+              "yaw": 0.002866645400872517,
+              "tilt": 0.00739783564405883
+            },
+            "mc_arm": {
+              "x": -0.004394543891592493,
+              "y": 0.03525088826803172,
+              "z": 0.14884744006408035,
+              "yaw": 0.03713913046021438,
+              "tilt": 1.4901161193847656e-08
+            }
+          },
+          "gripper_width": 0.06408553826051475,
+          "return_position_error_m": 0.035523754405866095,
+          "return_yaw_error_rad": 0.037139130460199794,
+          "search_translation_drift_m": 0.0027031889995045373,
+          "retention_observed_after_done_sec": 8.010406494140625,
+          "post_return_bottle_height_range_m": [
+            0.3524907522060497,
+            0.352533700953718
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation.",
+          "initial_bottle_distance_m": 2.2000004765195036,
+          "bottle_first_observed_after_arm_sec": -3.506277322769165,
+          "bottle_initially_absent": false,
+          "navigation_before_bottle_appeared": false,
+          "distance_m": 2.2
+        },
+        {
+          "seed": 12,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "scenario": "far24_seed12",
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": 2.369431,
+              "y": -0.381836,
+              "z": 0.45999942523705406,
+              "yaw": -0.15977699999999997,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.428465864035753e-09,
+              "y": 8.111742178727044e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.4588433540496868e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.22054526212728431,
+              "y": -0.0028327129530202355,
+              "z": 0.35400748189155207,
+              "yaw": 0.011777755479121339,
+              "tilt": 0.1844170160856711
+            },
+            "mc_arm": {
+              "x": -0.002358175662205993,
+              "y": 0.00853882945175682,
+              "z": 0.14884714666573473,
+              "yaw": -0.046527195316641866,
+              "tilt": 1.7386532867280175e-06
+            }
+          },
+          "gripper_width": 0.06436414507462179,
+          "return_position_error_m": 0.008858475834420534,
+          "return_yaw_error_rad": 0.046527195316656444,
+          "search_translation_drift_m": 0.0,
+          "retention_observed_after_done_sec": 8.013739109039307,
+          "post_return_bottle_height_range_m": [
+            0.35400748189155207,
+            0.3540162381541811
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation.",
+          "initial_bottle_distance_m": 2.400000416963906,
+          "bottle_first_observed_after_arm_sec": -2.0149810314178467,
+          "bottle_initially_absent": false,
+          "navigation_before_bottle_appeared": false,
+          "distance_m": 2.4
+        },
+        {
+          "seed": 0,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "scenario": "late21_seed0",
+          "state": "DONE",
+          "initial_truth": {
+            "mc_arm": {
+              "x": -1.4284658642463403e-09,
+              "y": 8.111712634534314e-13,
+              "z": 0.14884667068412913,
+              "yaw": 1.458995628101402e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "mc_arm": {
+              "x": -0.04465989146232867,
+              "y": 0.02391941127788491,
+              "z": 0.1488474400401497,
+              "yaw": 0.08560912926385005,
+              "tilt": 1.4901161193847656e-08
+            },
+            "water_bottle": {
+              "x": 0.16347759843169482,
+              "y": 0.04434882541818092,
+              "z": 0.3537841946302777,
+              "yaw": 0.03247212585036807,
+              "tilt": 0.03235086540473757
+            }
+          },
+          "gripper_width": 0.06466723590490078,
+          "return_position_error_m": 0.050662056942829714,
+          "return_yaw_error_rad": 0.08560912926383546,
+          "search_translation_drift_m": 0.014993402814906681,
+          "retention_observed_after_done_sec": 8.011526584625244,
+          "post_return_bottle_height_range_m": [
+            0.3537841946302777,
+            0.35378707620470295
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation.",
+          "initial_bottle_distance_m": 2.100000375553055,
+          "bottle_first_observed_after_arm_sec": 46.565269947052,
+          "bottle_initially_absent": true,
+          "navigation_before_bottle_appeared": false,
+          "distance_m": 2.1,
+          "delayed_fixture": {
+            "wall": 1793978467.8388402,
+            "after_completed_empty_turns": 1,
+            "position": [
+              -1.174058,
+              1.741146,
+              0.46
+            ],
+            "service_response": "data: true"
+          },
+          "empty_search_rotation_rad": 6.287499999999665,
+          "empty_search_duration_sec": 46.42115306854248
+        }
+      ]
+    },
+    "control_modes_2026-11-07.json": {
+      "success": true,
+      "input": "actual X11 keyboard events to the control window",
+      "observer_publishes_commands": false,
+      "steps": [
+        {
+          "step": "initial_manual",
+          "wall": 1794059045.3948543,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            4.399584508839717e-15,
+            -2.9045389667564323e-19,
+            -5.573353773912252e-18
+          ],
+          "velocity": [
+            -9.37620440688304e-19,
+            -8.845105159116358e-19,
+            -3.9914927654748995e-18
+          ],
+          "gripper_width": 0.07999999431479707,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1858.37625349,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": -1.4284658644082168e-09,
+              "y": 8.111651372490475e-13,
+              "z": 0.14884667068412913
+            }
+          }
+        },
+        {
+          "step": "keyboard_forward_and_release",
+          "wall": 1794059047.0531945,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.1500000000003025,
+            6.465459730692894e-16,
+            -9.41464177718741e-16
+          ],
+          "velocity": [
+            7.0868399451368995e-15,
+            3.5043638552033655e-19,
+            7.004727416805194e-19
+          ],
+          "gripper_width": 0.07999999431479707,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1859.964803101,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.14996293534902985,
+              "y": -3.3795153488960004e-07,
+              "z": 0.14884716241292253
+            }
+          },
+          "distance": 0.1500000000002981
+        },
+        {
+          "step": "keyboard_strafe",
+          "wall": 1794059048.3588278,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.15000000000037217,
+            0.09300000000025284,
+            -3.4598503165010356e-14
+          ],
+          "velocity": [
+            2.502614610534338e-15,
+            -2.644094378236436e-15,
+            -4.035540221182832e-15
+          ],
+          "gripper_width": 0.07999999431520828,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1861.271545127,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.14994095340776253,
+              "y": 0.09300300228820083,
+              "z": 0.14884724992740372
+            }
+          },
+          "distance": 0.09300000000025219
+        },
+        {
+          "step": "keyboard_rotate",
+          "wall": 1794059049.6657515,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.1500000000003715,
+            0.09300000000025116,
+            0.2599999999999618
+          ],
+          "velocity": [
+            1.7756774260658644e-15,
+            -1.8347627306990232e-15,
+            -5.096287993379315e-15
+          ],
+          "gripper_width": 0.07999999431479712,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1862.593876511,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.14969071340984716,
+              "y": 0.09493108053285221,
+              "z": 0.1488474399963185
+            }
+          },
+          "angle": 0.2599999999999964
+        },
+        {
+          "step": "auto_search_started",
+          "wall": 1794059051.2116535,
+          "mode": "AUTO",
+          "state": "SEARCHING",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.1500000000003715,
+            0.09300000000025116,
+            0.2599999999999618
+          ],
+          "velocity": [
+            1.7730278682132014e-15,
+            -1.8351024635709167e-15,
+            -5.092098790361418e-15
+          ],
+          "gripper_width": 0.07999999431479704,
+          "cmd": [
+            0.0,
+            0.0,
+            0.25
+          ],
+          "det_received": 1864.170500825,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.14969071340984716,
+              "y": 0.09493108053285221,
+              "z": 0.1488474399963185
+            }
+          }
+        },
+        {
+          "step": "search_cancelled_to_manual",
+          "wall": 1794059051.398311,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.1500000000003715,
+            0.09300000000025116,
+            0.2599999999999618
+          ],
+          "velocity": [
+            1.77426644835686e-15,
+            -1.8345105340072685e-15,
+            -5.094696723092745e-15
+          ],
+          "gripper_width": 0.07999999431479704,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1864.302296346,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.14969071340984716,
+              "y": 0.09493108053285221,
+              "z": 0.1488474399963185
+            }
+          }
+        },
+        {
+          "step": "manual_after_search_cancel",
+          "wall": 1794059052.6507587,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 0,
+          "cancels": 0,
+          "odom": [
+            0.06374969445214682,
+            0.07005556074395704,
+            0.25999999999996065
+          ],
+          "velocity": [
+            3.0672405286121176e-16,
+            2.494389858544612e-15,
+            3.713673060250267e-15
+          ],
+          "gripper_width": 0.07999999431479707,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1865.617382829,
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.06340662042979524,
+              "y": 0.07197752928613446,
+              "z": 0.14884740043399886
+            }
+          }
+        },
+        {
+          "step": "auto_navigation_started",
+          "wall": 1794059066.7820137,
+          "mode": "AUTO",
+          "state": "WAIT_NAV_RESULT",
+          "goals": 1,
+          "cancels": 0,
+          "odom": [
+            0.06681301788199052,
+            0.07255088320396667,
+            0.3737500000000938
+          ],
+          "velocity": [
+            0.041983012109994056,
+            0.015122395008805968,
+            1.1192696846644394e-14
+          ],
+          "gripper_width": 0.07999999431568955,
+          "cmd": [
+            0.058609165251255035,
+            0.019415872171521187,
+            0.0
+          ],
+          "det_received": 1879.755135138,
+          "goal": [
+            0.894203173347905,
+            1.0285488302608905
+          ],
+          "goal_stamp": [
+            16,
+            401000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.0661803186211852,
+              "y": 0.0752480195686229,
+              "z": 0.1488472511765129
+            }
+          }
+        },
+        {
+          "step": "navigation_cancelled_to_manual",
+          "wall": 1794059066.9710972,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 1,
+          "cancels": 1,
+          "odom": [
+            0.06698083478014864,
+            0.07269791718724368,
+            0.3737500000000847
+          ],
+          "velocity": [
+            -2.57588506361935e-16,
+            4.0536974717285945e-16,
+            5.316478574453777e-15
+          ],
+          "gripper_width": 0.07999999431491206,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1879.89260233,
+          "goal": [
+            0.894203173347905,
+            1.0285488302608905
+          ],
+          "goal_stamp": [
+            16,
+            401000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.06643988679717469,
+              "y": 0.07552540964656353,
+              "z": 0.1488471139964763
+            }
+          }
+        },
+        {
+          "step": "pick_started",
+          "wall": 1794059088.2127943,
+          "mode": "AUTO",
+          "state": "WAIT_PICK_RESULT",
+          "goals": 2,
+          "cancels": 1,
+          "odom": [
+            0.8777764187898287,
+            1.0259452258135506,
+            0.7579463256579836
+          ],
+          "velocity": [
+            5.1413509633296064e-15,
+            -5.453905612219033e-16,
+            4.363640325464656e-15
+          ],
+          "gripper_width": 0.07999999431479704,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1901.209964739,
+          "goal": [
+            0.8948214246764821,
+            1.027975679907907
+          ],
+          "goal_stamp": [
+            28,
+            348000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.8757817186570293,
+              "y": 1.0311239014903748,
+              "z": 0.14884744004226738
+            }
+          }
+        },
+        {
+          "step": "pick_handover_waits_with_stopped_base",
+          "wall": 1794059088.4032173,
+          "mode": "SWITCHING_TO_MANUAL",
+          "state": "WAIT_PICK_RESULT",
+          "goals": 2,
+          "cancels": 1,
+          "odom": [
+            0.8777764187898405,
+            1.0259452258135615,
+            0.7579463256579836
+          ],
+          "velocity": [
+            -9.730327147251056e-15,
+            -5.448309772385409e-16,
+            4.3632743345340045e-15
+          ],
+          "gripper_width": 0.0807999930069786,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1901.344473932,
+          "goal": [
+            0.8948214246764821,
+            1.027975679907907
+          ],
+          "goal_stamp": [
+            28,
+            348000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.21637,
+              "y": 1.459604,
+              "z": 0.45999942523705406
+            },
+            "mc_arm": {
+              "x": 0.8757817186570293,
+              "y": 1.0311239014903748,
+              "z": 0.14884744004226738
+            }
+          }
+        },
+        {
+          "step": "pick_stowed_then_manual",
+          "wall": 1794059101.598656,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 2,
+          "cancels": 1,
+          "odom": [
+            0.8777764187895053,
+            1.0259452258131918,
+            0.7579463256600395
+          ],
+          "velocity": [
+            5.1308387125690516e-15,
+            -5.463841807051475e-16,
+            4.358334897077501e-15
+          ],
+          "gripper_width": 0.06482382485175092,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1914.595861688,
+          "goal": [
+            0.8948214246764821,
+            1.027975679907907
+          ],
+          "goal_stamp": [
+            28,
+            348000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.0455865744570139,
+              "y": 1.1982720599369978,
+              "z": 0.35940311132170777
+            },
+            "mc_arm": {
+              "x": 0.8757817186570293,
+              "y": 1.0311239014903748,
+              "z": 0.14884744004226738
+            }
+          }
+        },
+        {
+          "step": "manual_carry",
+          "wall": 1794059103.5548081,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 2,
+          "cancels": 1,
+          "odom": [
+            0.9643816479951628,
+            1.107921422201186,
+            0.7579463256600383
+          ],
+          "velocity": [
+            -5.006957006383987e-15,
+            -1.077361482028598e-15,
+            5.529636278631152e-15
+          ],
+          "gripper_width": 0.06474423126708925,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1916.464895505,
+          "goal": [
+            0.8948214246764821,
+            1.027975679907907
+          ],
+          "goal_stamp": [
+            28,
+            348000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.1318922803371139,
+              "y": 1.2795987160501043,
+              "z": 0.35905756063472644
+            },
+            "mc_arm": {
+              "x": 0.9623761997173274,
+              "y": 1.113115691425257,
+              "z": 0.1488472615529041
+            }
+          }
+        },
+        {
+          "step": "return_resumed",
+          "wall": 1794059104.0843065,
+          "mode": "AUTO",
+          "state": "WAIT_RETURN_NAV_RESULT",
+          "goals": 3,
+          "cancels": 1,
+          "odom": [
+            0.9643816479951628,
+            1.107921422201186,
+            0.7579463256600383
+          ],
+          "velocity": [
+            -5.018966954690161e-15,
+            -1.077156402116129e-15,
+            5.524830662596715e-15
+          ],
+          "gripper_width": 0.06474235709122104,
+          "cmd": [
+            -0.11995711177587509,
+            -0.011627689003944397,
+            -0.012645820155739784
+          ],
+          "det_received": 1916.997368542,
+          "goal": [
+            0.06969544362648909,
+            0.065313342977584
+          ],
+          "goal_stamp": [
+            58,
+            971000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.1318647152201964,
+              "y": 1.2795583692151844,
+              "z": 0.35903531511583536
+            },
+            "mc_arm": {
+              "x": 0.9623761997173274,
+              "y": 1.113115691425257,
+              "z": 0.1488472615529041
+            }
+          }
+        },
+        {
+          "step": "return_cancelled",
+          "wall": 1794059104.273315,
+          "mode": "MANUAL",
+          "state": "IDLE",
+          "goals": 3,
+          "cancels": 2,
+          "odom": [
+            0.9643816479951628,
+            1.107921422201186,
+            0.7579463256600383
+          ],
+          "velocity": [
+            -5.030553390440833e-15,
+            -1.0774727097616666e-15,
+            5.525469399039678e-15
+          ],
+          "gripper_width": 0.06474160594720108,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1917.265967511,
+          "goal": [
+            0.06969544362648909,
+            0.065313342977584
+          ],
+          "goal_stamp": [
+            58,
+            971000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.131855158337199,
+              "y": 1.279544375478356,
+              "z": 0.35902761400158467
+            },
+            "mc_arm": {
+              "x": 0.9623761997173274,
+              "y": 1.113115691425257,
+              "z": 0.1488472615529041
+            }
+          }
+        },
+        {
+          "step": "return_resumed_again_same_home_new_stamp",
+          "wall": 1794059104.4660459,
+          "mode": "AUTO",
+          "state": "WAIT_RETURN_NAV_RESULT",
+          "goals": 4,
+          "cancels": 2,
+          "odom": [
+            0.9643816479951628,
+            1.107921422201186,
+            0.7579463256600383
+          ],
+          "velocity": [
+            -5.028433638041124e-15,
+            -1.0772714992617116e-15,
+            5.528866037941222e-15
+          ],
+          "gripper_width": 0.06474085481370652,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1917.398692242,
+          "goal": [
+            0.06969544362648909,
+            0.065313342977584
+          ],
+          "goal_stamp": [
+            59,
+            668000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 1.1318455101174327,
+              "y": 1.2795302433582976,
+              "z": 0.3590198425107253
+            },
+            "mc_arm": {
+              "x": 0.9623761997173274,
+              "y": 1.113115691425257,
+              "z": 0.1488472615529041
+            }
+          }
+        },
+        {
+          "step": "done_bottle_retained_8_sec",
+          "wall": 1794059121.2971919,
+          "mode": "AUTO",
+          "state": "DONE",
+          "goals": 4,
+          "cancels": 2,
+          "odom": [
+            0.055913602016010214,
+            0.12237003134640198,
+            0.3555643626289233
+          ],
+          "velocity": [
+            -1.2700811420278144e-16,
+            -1.4013163020552363e-16,
+            2.1768767361797694e-14
+          ],
+          "gripper_width": 0.06468005969050822,
+          "cmd": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "det_received": 1934.233447934,
+          "goal": [
+            0.06969544362648909,
+            0.065313342977584
+          ],
+          "goal_stamp": [
+            59,
+            668000000
+          ],
+          "truth": {
+            "water_bottle": {
+              "x": 0.27713663855714343,
+              "y": 0.21158084105203023,
+              "z": 0.35826913648884173
+            },
+            "mc_arm": {
+              "x": 0.05753463007697323,
+              "y": 0.12559657398174043,
+              "z": 0.1488474400932808
+            }
+          }
+        }
+      ],
+      "automated_tests": {
+        "total": 120,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "launch_command": "ros2 launch task_manager sim_bottle_search.launch.py seed:=42 radius_min:=1.9 radius_max:=1.9 rviz:=false"
+    },
+    "terminal_startup_2026-11-07.json": {
+      "date": "2026-11-07",
+      "original_failure": {
+        "old_launch_pid": 26630,
+        "orphan_server_pid": 26655,
+        "user_launch_pids": [
+          28644,
+          29725
+        ],
+        "warnings": [
+          "Detected jump back in time",
+          "Controller already loaded",
+          "Failed to configure controller"
+        ],
+        "cause": "Retained acceptance stack and shell-wrapper orphan collided with user launch; launching alone also requires /start_task."
+      },
+      "fixes": [
+        "Launch Gazebo server and GUI directly with shell=False; preserve ROS plugin paths",
+        "Hold a per-user flock for the full launch process lifetime; detect older demo/orphan servers",
+        "Opt-in auto_start waits for five controllers, active Nav2 and the existing vision/odometry/map checks; no CLI daemon dependency"
+      ],
+      "duplicate_start": {
+        "rejected_before_starting_robot_processes": true,
+        "message": "[ERROR] [launch]: Caught exception in launch (see debug for traceback): \u5df2\u6709 MC ARM \u4eff\u771f\u6b63\u5728\u8fd0\u884c\uff08PID 36683\uff09\u3002\u8bf7\u5728\u539f\u4eff\u771f\u7ec8\u7aef\u6309 Ctrl+C\uff0c\u7b49\u5f85\u9000\u51fa\u540e\u518d\u542f\u52a8\u3002"
+      },
+      "trials": [
+        {
+          "trial": "terminal_start_fix1",
+          "command": "ros2 launch task_manager sim_bottle_search.launch.py auto_start:=true radius_min:=1.6 radius_max:=2.4",
+          "observer_arms_task": false,
+          "bottle_distance_m": 2.115759366603395,
+          "state": "DONE",
+          "return_error_m": 0.004540492969784591,
+          "held_height_m": 0.35220622645218014,
+          "gripper_width_m": 0.06453339567312343,
+          "states": [
+            "IDLE",
+            "SEARCHING",
+            "WAIT_BASE_POSE",
+            "WAIT_NAV_RESULT",
+            "WAIT_PICK_RESULT",
+            "WAIT_RETURN_NAV_RESULT",
+            "DONE"
+          ],
+          "health": {
+            "clock_publishers": 1,
+            "clock_samples": 5238,
+            "backward_jumps": 0,
+            "controllers": [
+              [
+                "joint_state_broadcaster",
+                "active"
+              ],
+              [
+                "gripper_finger_controller",
+                "active"
+              ],
+              [
+                "arm_controller",
+                "active"
+              ],
+              [
+                "gripper_effort_controller",
+                "active"
+              ],
+              [
+                "base_controller",
+                "active"
+              ]
+            ]
+          },
+          "launch_pid": 33957,
+          "server_pid": 34021,
+          "shutdown": {
+            "remaining_processes": [],
+            "checked_after_sec": 8.880824327468872,
+            "manual_child_kill_used": false
+          }
+        },
+        {
+          "trial": "terminal_start_fix2",
+          "command": "ros2 launch task_manager sim_bottle_search.launch.py auto_start:=true radius_min:=1.6 radius_max:=2.4",
+          "observer_arms_task": false,
+          "bottle_distance_m": 1.712554390997553,
+          "state": "DONE",
+          "return_error_m": 0.031693712193731814,
+          "held_height_m": 0.35739693954326657,
+          "gripper_width_m": 0.0644156922347871,
+          "states": [
+            "SEARCHING",
+            "WAIT_BASE_POSE",
+            "WAIT_NAV_RESULT",
+            "WAIT_PICK_RESULT",
+            "WAIT_RETURN_NAV_RESULT",
+            "DONE"
+          ],
+          "launch_pid": 36683,
+          "server_pid": 36745,
+          "health": {
+            "clock_publishers": 1,
+            "clock_samples": 4947,
+            "backward_jumps": 0,
+            "controllers": [
+              [
+                "joint_state_broadcaster",
+                "active"
+              ],
+              [
+                "gripper_finger_controller",
+                "active"
+              ],
+              [
+                "gripper_effort_controller",
+                "active"
+              ],
+              [
+                "arm_controller",
+                "active"
+              ],
+              [
+                "base_controller",
+                "active"
+              ]
+            ]
+          },
+          "shutdown": {
+            "remaining_processes": [],
+            "checked_after_sec": 32.14886283874512,
+            "manual_child_kill_used": false
+          }
+        }
+      ],
+      "automated_tests": {
+        "total": 107,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "final_remaining_demo_pids": []
+    },
+    "random_search_2026-11-06.json": {
+      "date": "2026-11-06",
+      "backend": "ROS 2 Humble + Gazebo Fortress physical simulation",
+      "launch": "ros2 launch task_manager sim_bottle_search.launch.py seed:=<seed> rviz:=false",
+      "trigger": "/start_task std_srvs/srv/Trigger",
+      "bottle_placement": "Random supported bottle; seat z=0.46 m, radius 0.95..1.40 m, random azimuth",
+      "detector": "YOLOv8s ONNX, COCO bottle, confidence >= 0.20, three-frame 3D confirmation",
+      "automated_test_result": {
+        "tests": 92,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "runs": [
+        {
+          "seed": 1,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": -0.890924,
+              "y": -1.002454,
+              "z": 0.45999942523705406,
+              "yaw": -2.2973570000000003,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.4284658637984815e-09,
+              "y": 8.111717202892648e-13,
+              "z": 0.14884667068412913,
+              "yaw": 1.4589534398444082e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.1990434948662829,
+              "y": 0.01262259518483741,
+              "z": 0.3530830726715083,
+              "yaw": -0.13141843940139977,
+              "tilt": 0.029714138741724752
+            },
+            "mc_arm": {
+              "x": -0.009580407296837267,
+              "y": 0.030273178230550497,
+              "z": 0.14884742368299303,
+              "yaw": -0.09597050299638701,
+              "tilt": 1.2287812309317777e-07
+            }
+          },
+          "gripper_width": 0.06461498543092045,
+          "return_position_error_m": 0.03175294469387506,
+          "return_yaw_error_rad": 0.0959705029964016,
+          "search_translation_drift_m": 0.014992347700657755,
+          "retention_observed_after_done_sec": 8.011757373809814,
+          "post_return_bottle_height_range_m": [
+            0.3530830726715083,
+            0.3530865831878985
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation."
+        },
+        {
+          "seed": 7,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": 0.461111,
+              "y": -0.921629,
+              "z": 0.45999942523705406,
+              "yaw": -1.106891,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.4284658640352934e-09,
+              "y": 8.112495498191956e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.471056036353988e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.18578321436051373,
+              "y": -0.007682412909381295,
+              "z": 0.3523975315187826,
+              "yaw": -0.16394633149718776,
+              "tilt": 0.018665675957562064
+            },
+            "mc_arm": {
+              "x": -0.021946448840773035,
+              "y": 0.012389335638140514,
+              "z": 0.14884739573454434,
+              "yaw": -0.1044329750580862,
+              "tilt": 3.401253286157066e-07
+            }
+          },
+          "gripper_width": 0.06439818693786731,
+          "return_position_error_m": 0.025202027528664458,
+          "return_yaw_error_rad": 0.10443297505810091,
+          "search_translation_drift_m": 0.014994310349839958,
+          "retention_observed_after_done_sec": 8.009891510009766,
+          "post_return_bottle_height_range_m": [
+            0.3523975315187826,
+            0.3524111047768362
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation."
+        },
+        {
+          "seed": 42,
+          "detector": "YOLOv8s",
+          "confidence_threshold": 0.2,
+          "state": "DONE",
+          "initial_truth": {
+            "water_bottle": {
+              "x": 0.617033,
+              "y": 0.740419,
+              "z": 0.45999942523705406,
+              "yaw": 0.876044,
+              "tilt": 0.0
+            },
+            "mc_arm": {
+              "x": -1.4284658640577567e-09,
+              "y": 8.1117418646524e-13,
+              "z": 0.1488466706841291,
+              "yaw": 1.4588335526863526e-14,
+              "tilt": 0.0
+            }
+          },
+          "final_truth": {
+            "water_bottle": {
+              "x": 0.2112867494094159,
+              "y": 0.0582349359846094,
+              "z": 0.35268007199527285,
+              "yaw": 0.044704233789494854,
+              "tilt": 0.011464678735183633
+            },
+            "mc_arm": {
+              "x": 0.001890203664781211,
+              "y": 0.03637134344049045,
+              "z": 0.14884744003425165,
+              "yaw": 0.10031966961349549,
+              "tilt": 1.4901161193847656e-08
+            }
+          },
+          "gripper_width": 0.06411211410148202,
+          "return_position_error_m": 0.03642042694562541,
+          "return_yaw_error_rad": 0.10031966961348089,
+          "search_translation_drift_m": 0.0028413536011908345,
+          "retention_observed_after_done_sec": 8.0106680393219,
+          "post_return_bottle_height_range_m": [
+            0.3526756091480672,
+            0.352762021122709
+          ],
+          "ground_truth_scope": "External acceptance observer only; never supplied to task/localization/navigation."
+        }
+      ]
+    },
+    "bookstore/exploration_acceptance_2026-11-14.json": {
+      "scenario": "same occluded bookstore start reported by the user",
+      "initial_world_pose": [
+        -3.5359,
+        -5.0466,
+        -1.548455
+      ],
+      "bottle_station": 2,
+      "seed": 7,
+      "placement_height_m": 0.46,
+      "first_viewpoint": [
+        -1.575,
+        -3.375
+      ],
+      "viewpoint_source": "live global costmap reachability and unseen-view coverage; no bottle truth input",
+      "sequence": "empty full scan -> exploration navigation -> candidate detected during motion -> cancel navigation -> stationary visual confirmation -> pick -> return original start",
+      "state": "DONE",
+      "physically_held_after_8_sec": true,
+      "final_gripper": {
+        "width": 0.0653673953849474,
+        "force": 0.0
+      },
+      "final_truth": {
+        "water_bottle": {
+          "x": -3.434151408994674,
+          "y": -5.182756607000277,
+          "z": 0.3586584492878452,
+          "tilt": 0.21898437425684222
+        },
+        "mc_arm": {
+          "x": -3.464210737358716,
+          "y": -4.9851703789521755,
+          "z": 0.1488474400290769,
+          "tilt": 1.4901161193847656e-08
+        }
+      },
+      "physical_return_error_m": 0.09440841445618224,
+      "automated_tests": 152,
+      "camera_fix": "YOLO publishes its annotated inference frame directly; Qt uses one persistent ROS executor",
+      "reset_camera_check": {
+        "annotated_frames": 10,
+        "detections": [],
+        "mode": "MANUAL",
+        "state": "IDLE",
+        "image_format": [
+          640,
+          480,
+          "bgr8"
+        ],
+        "gripper_width": 0.07999999992204467
+      }
+    },
+    "bookstore/navigation_feedback_acceptance_2026-11-15.json": {
+      "spawn_xyyaw": [
+        -3.5359,
+        -5.0466,
+        -1.548455
+      ],
+      "task_result": "DONE",
+      "first_empty_full_scan": true,
+      "observation_goals": [
+        [
+          -1.575,
+          -3.375
+        ],
+        [
+          0.225,
+          -3.375
+        ],
+        [
+          0.225,
+          -0.975
+        ]
+      ],
+      "navigation_obstacle_contacts": 0,
+      "physical_contacts_records": 1524509,
+      "return_error_m": 0.046432425719026754,
+      "held_after_completion_wall_sec": 8.020011524000438,
+      "held_width_m": 0.0642599422725696,
+      "bottle_bottom_final_z_m": 0.3544394851057037,
+      "source_result": "occluded_dense_contacts_seed7_result.json",
+      "source_contacts": "occluded_dense_contacts_seed7_contact_summary.json",
+      "limits": "This is one deterministic scene/seed; it does not establish collision avoidance for every possible obstacle or dropped-object pose."
+    },
+    "bookstore/occluded_dense_contacts_seed7_contact_summary.json": {
+      "source": "occluded_dense_contacts_seed7_contacts.jsonl.gz",
+      "records": 1524509,
+      "counts_by_state": {
+        "startup": {
+          "floor": 4
+        },
+        "IDLE": {
+          "floor": 4886
+        },
+        "SEARCHING": {
+          "floor": 770266
+        },
+        "EXPLORING": {
+          "floor": 181325
+        },
+        "EXPLORATION_STOPPING": {
+          "floor": 94
+        },
+        "WAIT_BASE_POSE": {
+          "floor": 130033
+        },
+        "WAIT_NAV_RESULT": {
+          "floor": 28808
+        },
+        "WAIT_GRASP_TARGET": {
+          "floor": 3
+        },
+        "WAIT_PICK_RESULT": {
+          "floor": 59103,
+          "grasp": 15020
+        },
+        "VERIFY_CARRY": {
+          "grasp": 1660,
+          "floor": 3317
+        },
+        "WAIT_RETURN_NAV_RESULT": {
+          "floor": 187642,
+          "grasp": 93832
+        },
+        "DONE": {
+          "floor": 32344,
+          "grasp": 16172
+        }
+      },
+      "pairs": [
+        {
+          "collisions": [
+            "RetailShopFloor_01_001::aws_robomaker_retail_RetailShopFloor_01::link::collision",
+            "mc_arm::F_F_R_Link::F_F_R_Link_collision"
+          ],
+          "count": 349494
+        },
+        {
+          "collisions": [
+            "RetailShopFloor_01_001::aws_robomaker_retail_RetailShopFloor_01::link::collision",
+            "mc_arm::F_F_L_Link::F_F_L_Link_collision"
+          ],
+          "count": 349332
+        },
+        {
+          "collisions": [
+            "RetailShopFloor_01_001::aws_robomaker_retail_RetailShopFloor_01::link::collision",
+            "mc_arm::F_B_R_Link::F_B_R_Link_collision"
+          ],
+          "count": 349495
+        },
+        {
+          "collisions": [
+            "RetailShopFloor_01_001::aws_robomaker_retail_RetailShopFloor_01::link::collision",
+            "mc_arm::F_B_L_Link::F_B_L_Link_collision"
+          ],
+          "count": 349504
+        },
+        {
+          "collisions": [
+            "mc_arm::gripper_link2::gripper_link2_collision",
+            "water_bottle::link::body_collision"
+          ],
+          "count": 63422
+        },
+        {
+          "collisions": [
+            "mc_arm::gripper_link1::gripper_link1_collision",
+            "water_bottle::link::body_collision"
+          ],
+          "count": 63262
+        }
+      ],
+      "unexpected_examples": []
+    },
+    "bookstore/uniform_and_brief_hint_acceptance_2026-11-15.json": {
+      "date": "2026-11-15",
+      "task_manager_tests": {
+        "tests": 116,
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0
+      },
+      "empty_uniform_scan": {
+        "command_rad_s": 0.25,
+        "command_samples": 507,
+        "interior_zero_commands": 0,
+        "rotation_command_duration_sec": 25.301212864998888,
+        "physical_rotation_deg_including_brake": 359.1709574574779,
+        "physical_max_xy_drift_m": 0.014996204961465521,
+        "odom_steady_angular_mean": 0.25000000000000144,
+        "odom_steady_angular_stdev": 2.1128028924498314e-14,
+        "no_targets_or_navigation": true,
+        "expected_terminal": "FAILED: configured finite one-turn scan without bottle; observer then selects MANUAL"
+      },
+      "bearing_tests": {
+        "hint": {
+          "states": [
+            "IDLE",
+            "SEARCHING",
+            "EXPLORING",
+            "SEARCHING",
+            "WAIT_BASE_POSE",
+            "IDLE"
+          ],
+          "observation_goal_xy": [
+            1.1250001657754183,
+            -0.6749998610466719
+          ],
+          "goal_advance_m": 1.311964248428837,
+          "physical_advance_m": 1.2547470218116044,
+          "goal_at_sec": 7.472401279001133,
+          "no_post_arm_3d_target_before_navigation": true,
+          "3d_confirmed_at_sec": 16.183942445000866,
+          "physical_test_scope": "Real YOLO images; depth localizer SIGSTOP until bearing navigation. Observer switches manual at WAIT_BASE_POSE, before grasp."
+        },
+        "one_second": {
+          "states": [
+            "IDLE",
+            "SEARCHING",
+            "EXPLORING",
+            "SEARCHING",
+            "WAIT_BASE_POSE",
+            "IDLE"
+          ],
+          "observation_goal_xy": [
+            1.1250001657754183,
+            -0.6749998610466719
+          ],
+          "goal_advance_m": 1.3119642484288367,
+          "physical_advance_m": 1.2644281518837321,
+          "goal_at_sec": 4.901825196999198,
+          "no_post_arm_3d_target_before_navigation": true,
+          "3d_confirmed_at_sec": 13.575278375999915,
+          "physical_test_scope": "Real YOLO images; depth localizer SIGSTOP until bearing navigation. Observer switches manual at WAIT_BASE_POSE, before grasp.",
+          "real_glimpse_seconds": 1.0005777220012533,
+          "empty_frames_before_goal": 33,
+          "navigation_delay_after_glimpse_sec": 3.47842904099889,
+          "fault_injection": "Pause real detector after one second; publish empty Detection2DArray heartbeat until observation navigation dispatch, then resume detector and depth localizer. No synthetic positive detections."
+        }
+      },
+      "passed": true
+    },
+    "bookstore/drop_recovery_acceptance_2026-11-15.json": {
+      "scenario": "normal supported pick -> public gripper-open fault during return -> autonomous floor regrasp -> original home",
+      "result": "PASS",
+      "source_result": "floor_body_refined_e2e_seed7_result.json",
+      "public_fault_command": {
+        "topic": "/control/gripper_cmd",
+        "width_m": 0.09
+      },
+      "loss_detected": true,
+      "bottle_min_world_z_m": -0.00040302187779561564,
+      "home_goals_before_and_after_recovery": [
+        {
+          "stamp": [
+            61,
+            618000000
+          ],
+          "frame": "map",
+          "xyz": [
+            2.0615778449893924e-15,
+            -1.189397395861316e-15,
+            0.0
+          ]
+        },
+        {
+          "stamp": [
+            96,
+            799000000
+          ],
+          "frame": "map",
+          "xyz": [
+            2.0615778449893924e-15,
+            -1.189397395861316e-15,
+            0.0
+          ]
+        }
+      ],
+      "original_home_preserved": true,
+      "return_error_m": 0.033060506683037366,
+      "held_width_m": 0.06399717467459057,
+      "held_after_completion_wall_sec": 8.021801319000588,
+      "retention_observations": 16,
+      "retention_all_samples_held": true,
+      "floor_grasp_world_height_m": 0.11884745,
+      "floor_approach": "vertical, fixed calibrated 110 degree pinch orientation",
+      "floor_lift_m": 0.25,
+      "scope": "known upright bottle model on flat floor; not arbitrary lying-object grasping"
+    }
+  }
+}

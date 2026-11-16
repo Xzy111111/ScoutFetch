@@ -1,0 +1,12 @@
+initial_positions:
+  joint1: 0.0
+  joint2: 0.2
+  joint3: -0.4
+  joint4: 0.0
+  joint5: 0.2
+  joint6: 0.0
+  gripper: 0.08
+  # 仿真: Gazebo 的 URDF->SDF 不执行 <mimic>, 两根手指各由 gripper_finger_controller
+  # 直接驱动。初始值对应张开位 (gripper=0.08 -> 每指 0.04)。
+  gripper_joint1: 0.04
+  gripper_joint2: -0.04

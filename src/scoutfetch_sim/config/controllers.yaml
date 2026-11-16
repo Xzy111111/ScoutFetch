@@ -1,0 +1,96 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 200
+    use_sim_time: true
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    base_controller:
+      type: mecanum_drive_controller/MecanumDriveController
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+    gripper_effort_controller:
+      type: effort_controllers/GripperActionController
+    gripper_finger_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+base_controller:
+  ros__parameters:
+    use_sim_time: true
+    reference_timeout: 0.5
+    use_stamped_vel: false
+    front_left_wheel_command_joint_name: F_F_L
+    front_right_wheel_command_joint_name: F_F_R
+    rear_left_wheel_command_joint_name: F_B_L
+    rear_right_wheel_command_joint_name: F_B_R
+    front_left_wheel_state_joint_name: F_F_L
+    front_right_wheel_state_joint_name: F_F_R
+    rear_left_wheel_state_joint_name: F_B_L
+    rear_right_wheel_state_joint_name: F_B_R
+    kinematics:
+      wheels_radius: 0.07687545
+      # Contacts are centred at the CAD wheel COM, 0.03878 m inboard of
+      # each joint anchor. lx=0.16014, ly=0.13096 m (sim contact model).
+      sum_of_robot_center_projection_on_X_Y_axis: 0.29110
+      base_frame_offset: {x: 0.0, y: 0.0, theta: 0.0}
+    base_frame_id: base_link
+    odom_frame_id: odom
+    enable_odom_tf: true
+    pose_covariance_diagonal: [0.005, 0.005, 0.01, 0.01, 0.01, 0.02]
+    twist_covariance_diagonal: [0.01, 0.01, 0.02, 0.02, 0.02, 0.04]
+
+arm_controller:
+  ros__parameters:
+    joints: [joint1, joint2, joint3, joint4, joint5, joint6]
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+    constraints:
+      stopped_velocity_tolerance: 0.02
+      goal_time: 1.0
+
+gripper_effort_controller:
+  ros__parameters:
+    joint: gripper
+    allow_stalling: true
+    goal_tolerance: 0.01
+    stall_timeout: 1.0
+    # Effort PID for the prismatic gripper joint (0..0.1 m = hardware width).
+    #   i = 0: the effort PID's first update after activation sees a near-infinite
+    #     dt (last_update_time_ starts at the steady-clock epoch), which slams the
+    #     integral straight to i_clamp. It unwinds far too slowly to recover,
+    #     leaving a permanent i_clamp/p bias in the joint position (2.0/200 = 0.01 m,
+    #     measured +0.00996 m) that breaks the upper layer's width checks. With no
+    #     integral there is no such bias; `force` (goal max_effort) still clamps the
+    #     effort so a blocked close holds the object with the requested force
+    #     (AD-008).
+    #   d = 3.0: pure-P feedback on this low-mass joint is an underdamped spring
+    #     and limit-cycles across the whole 0..0.1 m range (p=500/d=1 was measured
+    #     oscillating 0 <-> 0.10). d=3.0 with p=200 brings it to ~critically
+    #     damped: measured width tracking error < 0.001 m at force 1.0 N.
+    #   The gains are read once per on_activate (auto_declare in the adapter), so a
+    #   live retune requires `ros2 param set /gripper_effort_controller gains...`
+    #   followed by deactivate/activate of the controller.
+    gains:
+      gripper:
+        p: 200.0
+        i: 0.0
+        d: 3.0
+        i_clamp: 0.0
+
+# 仿真专用: Gazebo 不执行 URDF <mimic>, 手指必须直接驱动。
+# 用 joint_trajectory_controller + effort 命令接口: 它按位置误差做 PID, 输出被
+# u_clamp 限制在 1.0 N (与硬件 gripper force 语义一致), 夹住物体后手指停在物体
+# 外径处, 不会像位置伺服那样硬穿过去。gripper 主关节仍由 gripper_effort_controller
+# 驱动, 仅用于保持 width 语义/MoveIt mimic 一致。
+gripper_finger_controller:
+  ros__parameters:
+    joints: [gripper_joint1, gripper_joint2]
+    command_interfaces: [effort]
+    state_interfaces: [position, velocity]
+    state_publish_rate: 50.0
+    allow_partial_joints_goal: false
+    gains:
+      gripper_joint1: {p: 200.0, i: 0.0, d: 3.0, i_clamp: 0.0, u_clamp: 1.0}
+      gripper_joint2: {p: 200.0, i: 0.0, d: 3.0, i_clamp: 0.0, u_clamp: 1.0}

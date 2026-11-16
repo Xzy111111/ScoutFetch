@@ -1,0 +1,17 @@
+pointcloud_to_laserscan:
+  ros__parameters:
+    # Match the real MC_ARM Mid-360 pipeline.  Heights are evaluated after
+    # transforming the cloud into base_link, so this slice ignores the floor while
+    # retaining chair legs and other navigation obstacles.
+    target_frame: base_link
+    transform_tolerance: 0.05
+    min_height: 0.05
+    max_height: 0.50
+    angle_min: -3.14159
+    angle_max: 3.14159
+    angle_increment: 0.0043
+    scan_time: 0.10
+    range_min: 0.20
+    range_max: 15.0
+    use_inf: true
+    inf_epsilon: 1.0

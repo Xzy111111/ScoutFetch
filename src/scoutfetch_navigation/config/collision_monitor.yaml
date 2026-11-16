@@ -1,0 +1,27 @@
+collision_monitor:
+  ros__parameters:
+    use_sim_time: true
+    base_frame_id: base_link
+    odom_frame_id: odom
+    cmd_vel_in_topic: /cmd_vel_unfiltered
+    cmd_vel_out_topic: /cmd_vel
+    transform_tolerance: 0.3
+    source_timeout: 0.7
+    base_shift_correction: true
+    stop_pub_timeout: 2.0
+    polygons: [FootprintApproach]
+    FootprintApproach:
+      type: polygon
+      action_type: approach
+      footprint_topic: /local_costmap/published_footprint
+      time_before_collision: 1.5
+      simulation_time_step: 0.05
+      max_points: 1
+      visualize: true
+      polygon_pub_topic: /collision_monitor/footprint
+      enabled: true
+    observation_sources: [scan]
+    scan:
+      type: scan
+      topic: /livox/scan
+      enabled: true
